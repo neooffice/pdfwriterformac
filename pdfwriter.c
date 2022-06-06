@@ -93,7 +93,15 @@ static void _set_defaults() {
 static void log_event(short type, char message[], char *detail) {
     time_t secs;
     char ctype[8], *timestring;
-    
+
+    if (!logfp) {
+        cp_string logfile;
+        snprintf(logfile,BUFSIZE,"%s%s",conf.log,"/pdfwriter_log");
+        logfp=fopen(logfile, "a");
+        if (!logfp)
+            return;
+    }
+
     if (strlen(conf.log) && (type & conf.logtype)) { 
         time(&secs);
         timestring=ctime(&secs);
@@ -154,7 +162,6 @@ static int create_dir(char *dirname, int nolog) {
 static int init() {
     struct stat fstatus;
     struct group *group;
-    cp_string logfile;
     
     _set_defaults();
 
@@ -177,8 +184,6 @@ static int init() {
         if (chmod(conf.log, 0700))
             return 1;
     }
-    snprintf(logfile,BUFSIZE,"%s%s",conf.log,"/pdfwriter_log");
-    logfp=fopen(logfile, "a");
 
     return 0;
 }
