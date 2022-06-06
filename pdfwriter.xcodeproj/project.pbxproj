@@ -6,48 +6,40 @@
 	objectVersion = 55;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		3E104F5C122DB703001514A9 /* Installer */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 3E104F61122DB729001514A9 /* Build configuration list for PBXAggregateTarget "Installer" */;
-			buildPhases = (
-				3E104F5B122DB703001514A9 /* ShellScript */,
-			);
-			dependencies = (
-				3E104F60122DB70B001514A9 /* PBXTargetDependency */,
-			);
-			name = Installer;
-			productName = Installer;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		3EE9D0C8122C47F6007D056F /* pdfwriter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DD76FB20486AB0100D96B5E /* pdfwriter */; };
-		3EE9D0C9122C47FC007D056F /* PDFwriter.ppd in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC0519E912219C1100DCCB1B /* PDFwriter.ppd */; };
-		3EE9D0F4122C5BFA007D056F /* uninstall.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3EE9D0F3122C5BFA007D056F /* uninstall.sh */; };
-		FC0519E612219BAF00DCCB1B /* pdfwriter.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0519E512219BAF00DCCB1B /* pdfwriter.c */; };
+		3FC0FECA284E8B78007AC590 /* pdfwriter.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0519E512219BAF00DCCB1B /* pdfwriter.c */; };
+		3FC0FEDB284E8CA3007AC590 /* PDFwriter.ppd in Resources */ = {isa = PBXBuildFile; fileRef = FC0519E912219C1100DCCB1B /* PDFwriter.ppd */; };
+		3FC0FEDC284E8CA8007AC590 /* uninstall.sh in Resources */ = {isa = PBXBuildFile; fileRef = 3EE9D0F3122C5BFA007D056F /* uninstall.sh */; };
+		3FC0FEDE284E8CBB007AC590 /* pdfwriter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FC0FEC3284E8AF6007AC590 /* pdfwriter */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3E104F5F122DB70B001514A9 /* PBXContainerItemProxy */ = {
+		3FC0FEDF284E8CC1007AC590 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
+			remoteGlobalIDString = 3FC0FEC2284E8AF6007AC590;
 			remoteInfo = pdfwriter;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3EE9D0C0122C42E6007D056F /* CopyFiles */ = {
+		3FC0FEC1284E8AF6007AC590 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = pkgroot/Library/Printers/Lisanet/PDFwriter;
-			dstSubfolderSpec = 16;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
 			files = (
-				3EE9D0F4122C5BFA007D056F /* uninstall.sh in CopyFiles */,
-				3EE9D0C9122C47FC007D056F /* PDFwriter.ppd in CopyFiles */,
-				3EE9D0C8122C47F6007D056F /* pdfwriter in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3FC0FEDD284E8CAF007AC590 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				3FC0FEDE284E8CBB007AC590 /* pdfwriter in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,14 +49,22 @@
 		3EE84DEC1225D32400FF5AAA /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		3EE9D0E9122C4A90007D056F /* postinstall.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = postinstall.sh; sourceTree = "<group>"; };
 		3EE9D0F3122C5BFA007D056F /* uninstall.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = uninstall.sh; sourceTree = "<group>"; };
-		8DD76FB20486AB0100D96B5E /* pdfwriter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pdfwriter; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC0FEC3284E8AF6007AC590 /* pdfwriter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pdfwriter; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC0FED7284E8C78007AC590 /* pdfwriter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pdfwriter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC0519E512219BAF00DCCB1B /* pdfwriter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pdfwriter.c; sourceTree = "<group>"; };
 		FC0519E712219BC000DCCB1B /* pdfwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pdfwriter.h; sourceTree = "<group>"; };
 		FC0519E912219C1100DCCB1B /* PDFwriter.ppd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PDFwriter.ppd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8DD76FAD0486AB0100D96B5E /* Frameworks */ = {
+		3FC0FEC0284E8AF6007AC590 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FC0FED4284E8C78007AC590 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -99,7 +99,8 @@
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DD76FB20486AB0100D96B5E /* pdfwriter */,
+				3FC0FEC3284E8AF6007AC590 /* pdfwriter */,
+				3FC0FED7284E8C78007AC590 /* pdfwriter.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,24 +124,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8DD76FA90486AB0100D96B5E /* pdfwriter */ = {
+		3FC0FEC2284E8AF6007AC590 /* pdfwriter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB928508733DD80010E9CD /* Build configuration list for PBXNativeTarget "pdfwriter" */;
+			buildConfigurationList = 3FC0FEC7284E8AF6007AC590 /* Build configuration list for PBXNativeTarget "pdfwriter" */;
 			buildPhases = (
-				8DD76FAB0486AB0100D96B5E /* Sources */,
-				8DD76FAD0486AB0100D96B5E /* Frameworks */,
-				3EE4E5F412285E5000CFE59B /* Resources */,
-				3EE9D0C0122C42E6007D056F /* CopyFiles */,
+				3FC0FEBF284E8AF6007AC590 /* Sources */,
+				3FC0FEC0284E8AF6007AC590 /* Frameworks */,
+				3FC0FEC1284E8AF6007AC590 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = pdfwriter;
-			productInstallPath = "$(HOME)/bin";
 			productName = pdfwriter;
-			productReference = 8DD76FB20486AB0100D96B5E /* pdfwriter */;
+			productReference = 3FC0FEC3284E8AF6007AC590 /* pdfwriter */;
 			productType = "com.apple.product-type.tool";
+		};
+		3FC0FED6284E8C78007AC590 /* PDFwriter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FC0FED8284E8C78007AC590 /* Build configuration list for PBXNativeTarget "PDFwriter" */;
+			buildPhases = (
+				3FC0FED3284E8C78007AC590 /* Sources */,
+				3FC0FED4284E8C78007AC590 /* Frameworks */,
+				3FC0FED5284E8C78007AC590 /* Resources */,
+				3FC0FEDD284E8CAF007AC590 /* CopyFiles */,
+				3FC0FEE1284E8D12007AC590 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FC0FEE0284E8CC1007AC590 /* PBXTargetDependency */,
+			);
+			name = PDFwriter;
+			productName = PDFwriter;
+			productReference = 3FC0FED7284E8C78007AC590 /* pdfwriter.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -150,6 +169,14 @@
 			attributes = {
 				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Simone Karin Lehmann";
+				TargetAttributes = {
+					3FC0FEC2284E8AF6007AC590 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					3FC0FED6284E8C78007AC590 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
 			};
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "pdfwriter" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -165,88 +192,71 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DD76FA90486AB0100D96B5E /* pdfwriter */,
-				3E104F5C122DB703001514A9 /* Installer */,
+				3FC0FEC2284E8AF6007AC590 /* pdfwriter */,
+				3FC0FED6284E8C78007AC590 /* PDFwriter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3EE4E5F412285E5000CFE59B /* Resources */ = {
+		3FC0FED5284E8C78007AC590 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC0FEDC284E8CA8007AC590 /* uninstall.sh in Resources */,
+				3FC0FEDB284E8CA3007AC590 /* PDFwriter.ppd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E104F5B122DB703001514A9 /* ShellScript */ = {
+		3FC0FEE1284E8D12007AC590 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+			);
+			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\nif [ ! -e build/Release/pkgroot/Users/Shared/PDFwriter ]; then \n\tmkdir -p build/Release/pkgroot/Users/Shared\n\tcd build/Release/pkgroot/Users/Shared\n\tln -s /var/spool/pdfwriter PDFwriter\n\tcd -\nfi\n\nexit 0\n";
+			shellPath = "/bin/sh -e";
+			shellScript = "# Restrict executable permissions otherwise cups won't load our driver\nchmod 700 \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"\n\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8DD76FAB0486AB0100D96B5E /* Sources */ = {
+		3FC0FEBF284E8AF6007AC590 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC0519E612219BAF00DCCB1B /* pdfwriter.c in Sources */,
+				3FC0FECA284E8B78007AC590 /* pdfwriter.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FC0FED3284E8C78007AC590 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E104F60122DB70B001514A9 /* PBXTargetDependency */ = {
+		3FC0FEE0284E8CC1007AC590 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8DD76FA90486AB0100D96B5E /* pdfwriter */;
-			targetProxy = 3E104F5F122DB70B001514A9 /* PBXContainerItemProxy */;
+			target = 3FC0FEC2284E8AF6007AC590 /* pdfwriter */;
+			targetProxy = 3FC0FEDF284E8CC1007AC590 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1DEB928608733DD80010E9CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Planamesa Inc (8V953UDD5Q)";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				INSTALL_PATH = /usr/local/bin;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = pdfwriter;
-			};
-			name = Debug;
-		};
-		1DEB928708733DD80010E9CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Planamesa Inc (8V953UDD5Q)";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = /usr/local/bin;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = pdfwriter;
-			};
-			name = Release;
-		};
 		1DEB928A08733DD80010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -331,42 +341,159 @@
 			};
 			name = Release;
 		};
-		3E104F5D122DB704001514A9 /* Debug */ = {
+		3FC0FEC8284E8AF6007AC590 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Planamesa Inc (8V953UDD5Q)";
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8V953UDD5Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = Installer;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
-		3E104F5E122DB704001514A9 /* Release */ = {
+		3FC0FEC9284E8AF6007AC590 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Planamesa Inc (8V953UDD5Q)";
-				COPY_PHASE_STRIP = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				PRODUCT_NAME = Installer;
-				ZERO_LINK = NO;
+				DEVELOPMENT_TEAM = 8V953UDD5Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		3FC0FED9284E8C78007AC590 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8V953UDD5Q;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Simone Karin Lehmann. All rights reserved.";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = de.lisanet.PDFwriter;
+				PRODUCT_NAME = pdfwriter;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		3FC0FEDA284E8C78007AC590 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8V953UDD5Q;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Simone Karin Lehmann. All rights reserved.";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = de.lisanet.PDFwriter;
+				PRODUCT_NAME = pdfwriter;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB928508733DD80010E9CD /* Build configuration list for PBXNativeTarget "pdfwriter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1DEB928608733DD80010E9CD /* Debug */,
-				1DEB928708733DD80010E9CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "pdfwriter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -376,11 +503,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E104F61122DB729001514A9 /* Build configuration list for PBXAggregateTarget "Installer" */ = {
+		3FC0FEC7284E8AF6007AC590 /* Build configuration list for PBXNativeTarget "pdfwriter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E104F5D122DB704001514A9 /* Debug */,
-				3E104F5E122DB704001514A9 /* Release */,
+				3FC0FEC8284E8AF6007AC590 /* Debug */,
+				3FC0FEC9284E8AF6007AC590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FC0FED8284E8C78007AC590 /* Build configuration list for PBXNativeTarget "PDFwriter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FC0FED9284E8C78007AC590 /* Debug */,
+				3FC0FEDA284E8C78007AC590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
