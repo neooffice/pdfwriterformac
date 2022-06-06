@@ -4,4 +4,5 @@ pdfwriter.xcodeproj/*.mode1v3
 pdfwriter.xcodeproj/*.pbxuser
 pdfwriter.xcodeproj/project.xcworkspace
 pdfwriter.xcodeproj/xcuserdata
+pdfwriter.xcodeproj/xcshareddata
 
