@@ -10,6 +10,7 @@
 # make symlinks
 ln -sf /Library/Printers/Lisanet/PDFwriter/Contents/MacOS/pdfwriter /usr/libexec/cups/backend/pdfwriter
 ln -sf /Library/Printers/Lisanet/PDFwriter/Contents/Resources/PDFwriter.ppd /Library/Printers/PPDs/Contents/Resources/PDFwriter.ppd
+ln -sf /var/spool/pdfwriter /Users/Shared/PDFwriter
 
 # restart cupsd
 launchctl unload /System/Library/LaunchDaemons/org.cups.cupsd.plist
