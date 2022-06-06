@@ -14,5 +14,5 @@ sudo rm -Rf /Library/Printers/Lisanet
 sudo pkgutil --forget de.lisanet.PDFwriter.pkg 
 
 # restart cupsd
-launchctl stop org.cups.cupsd
-launchctl start org.cups.cupsd
+launchctl unload /System/Library/LaunchDaemons/org.cups.cupsd.plist
+launchctl load /System/Library/LaunchDaemons/org.cups.cupsd.plist
