@@ -8,8 +8,8 @@
 
 
 # make symlinks
-ln -s /Library/Printers/Lisanet/PDFwriter/pdfwriter /usr/libexec/cups/backend/pdfwriter
-ln -s /Library/Printers/Lisanet/PDFwriter/PDFwriter.ppd /usr/share/cups/model/PDFwriter.ppd
+ln -sf /Library/Printers/Lisanet/PDFwriter/pdfwriter /usr/libexec/cups/backend/pdfwriter
+ln -sf /Library/Printers/Lisanet/PDFwriter/PDFwriter.ppd /Library/Printers/PPDs/Contents/Resources/PDFwriter.ppd
 
 # restart cupsd
 launchctl unload /System/Library/LaunchDaemons/org.cups.cupsd.plist
