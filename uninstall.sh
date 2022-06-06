@@ -10,7 +10,7 @@ sudo rm /Library/Printers/Lisanet/PDFwriter/*
 sudo rm /Library/Printers/Lisanet/PDFwriter/.DS_S*
 sudo rm /Library/Printers/Lisanet/.DS_S*
 sudo rm /usr/libexec/cups/backend/pdfwriter
-sudo rm /usr/share/cups/model/PDFwriter.ppd
+sudo rm /Library/Printers/PPDs/Contents/Resources/PDFwriter.ppd
 
 
 sudo rmdir /Library/Printers/Lisanet/PDFwriter
