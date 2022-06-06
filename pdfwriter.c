@@ -69,8 +69,6 @@
 
 #include "pdfwriter.h"
 
-extern int errno;
-
 static FILE *logfp=NULL;
 
 #ifndef LOGTYPE
@@ -130,7 +128,7 @@ static void log_event(short type, char message[], char *detail) {
 static int create_dir(char *dirname, int nolog) {
     struct stat fstatus;
     char buffer[BUFSIZE],*delim;
-    int i;
+    unsigned long i;
     
     while ((i=strlen(dirname))>1 && dirname[i-1]=='/')
         dirname[i-1]='\0';
@@ -192,7 +190,7 @@ static int init() {
 static int create_userdir(struct passwd *passwd, char *userdirname) {
     struct stat fstatus;
     mode_t mode;
-    int size;
+    unsigned long size;
     char *dirname;
 
     size = strlen(conf.outdir) + strlen(userdirname) + 2;
@@ -359,7 +357,7 @@ static int write_pdf(FILE *fpsrc, char *outfile, struct passwd *passwd) {
 int main(int argc, char *argv[]) {
     char *user, *userdirname, *outfile, *cmdtitle;
     cp_string title="";
-    int size, job;
+    unsigned long size, job;
     struct passwd *passwd;
     
     
@@ -432,11 +430,11 @@ int main(int argc, char *argv[]) {
         cmdtitle="";
     
     if (!preparetitle(cmdtitle)) {
-        snprintf(title, BUFSIZE, "job_%i untitled_document", job);
+        snprintf(title, BUFSIZE, "job_%lu untitled_document", job);
         log_event(CPDEBUG, "no title found - using default value", title);
     }
     else {
-        snprintf(title, BUFSIZE, "job_%i %s", job, cmdtitle);
+        snprintf(title, BUFSIZE, "job_%lu %s", job, cmdtitle);
         log_event(CPDEBUG, "title successfully retrieved", title);
     }
     
