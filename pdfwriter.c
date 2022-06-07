@@ -171,7 +171,10 @@ static int init() {
     
     group=getgrnam(conf.grp);
     if (group) {
-        setgid(group->gr_gid);
+        if (setgid(group->gr_gid) != 0) {
+            log_event(CPERROR, "failed to setuid to new gid", conf.grp);
+            return 1;
+        }
         log_event(CPDEBUG, "switching to new gid", conf.grp);
     } else {
         log_event(CPERROR, "Grp not found", conf.grp);
@@ -249,7 +252,10 @@ static void replace_string(char *string) {
 }
 
 static int preparetitle(char *title) {
-    char *cut;
+    if (title == NULL)
+        return 0;
+    
+    char *cut = NULL;
     
     if (title != NULL) {
         log_event(CPDEBUG, "removing trailing newlines from title", title);
@@ -288,13 +294,16 @@ static int preparetitle(char *title) {
         if ((cut != NULL) && (cut != title)) {
             cut[0] = '\0';
         }
-        while (ispunct(title[strlen(title)-1])) {
-            title[strlen(title)-1] = '\0';
+        size_t titlelen = strlen(title);
+        while (titlelen > 0 && ispunct(title[titlelen-1])) {
+            title[titlelen-1] = '\0';
+            titlelen = strlen(title);
         }
         
         /* strip trailing spaces */
-        while (title[strlen(title)-1] == ' ') {
-            title[strlen(title)-1]='\0';
+        while (titlelen && title[titlelen-1] == ' ') {
+            title[titlelen-1]='\0';
+            titlelen = strlen(title);
         }
     }
     return strcmp(title, "");
