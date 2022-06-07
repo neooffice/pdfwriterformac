@@ -226,7 +226,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/sh -e";
-			shellScript = "# Restrict executable permissions otherwise cups won't load our driver\nchmod 700 \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"\n\nexit 0\n";
+			shellScript = "# Restrict executable permissions otherwise cups won't load our driver\nif [ -z \"$BUILT_PRODUCTS_DIR\" -o -z \"$EXECUTABLE_PATH\" -o ! -d \"$BUILT_PRODUCTS_DIR\" -o ! -f \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\" ] ; then\n    exit 1\nfi\nchmod 700 \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"\nchmod 700 `dirname \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"`\"/../Resources/uninstall.sh\"\n\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
