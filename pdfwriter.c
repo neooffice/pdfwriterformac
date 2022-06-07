@@ -67,6 +67,8 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+#include <CoreFoundation/CoreFoundation.h>
+
 #include "pdfwriter.h"
 
 static FILE *logfp=NULL;
@@ -74,6 +76,8 @@ static FILE *logfp=NULL;
 #ifndef LOGTYPE
 #define LOGTYPE 3
 #endif
+
+#define VERSION_MAX_LEN 32
 
 static void _set_defaults() {
     conf.anondirname = "anonymous users";
@@ -368,7 +372,21 @@ int main(int argc, char *argv[]) {
     
     if (init()) 
         return 5;
-    log_event(CPDEBUG, "initialization finished", VERSION);
+    
+    char version[VERSION_MAX_LEN];
+    version[0] = '\0';
+    
+    CFBundleRef mainbundle = CFBundleGetMainBundle();
+    if (mainbundle) {
+        CFTypeRef val = CFBundleGetValueForInfoDictionaryKey(mainbundle, CFSTR("CFBundleShortVersionString"));
+        if (val && CFGetTypeID(val) == CFStringGetTypeID())
+        {
+            if (!CFStringGetCString((CFStringRef)val, version, sizeof(version), kCFStringEncodingUTF8))
+                version[0] = '\0';
+         }
+    }
+    
+    log_event(CPDEBUG, "initialization finished", version);
     
     if (argc==1) {
         printf("file pdfwriter:/ \"Virtual PDF Printer\" \"PDFwriter\" \"MFG:Lisanet;MDL:PDFwriter;DES:Lisanet PDFwriter - Print PDF into files;CLS:PRINTER;CMD:POSTSCRIPT;\"\n"); 

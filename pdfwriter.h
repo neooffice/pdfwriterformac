@@ -28,8 +28,6 @@
 
 
 
-#define VERSION "1.3"
-
 #define CPERROR         1
 #define CPSTATUS        2
 #define CPDEBUG         4
