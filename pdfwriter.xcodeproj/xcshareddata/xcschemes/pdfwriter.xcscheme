@@ -7,20 +7,6 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3FC0FED6284E8C78007AC590"
-               BuildableName = "pdfwriter.bundle"
-               BlueprintName = "PDFwriter"
-               ReferencedContainer = "container:pdfwriter.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
@@ -31,6 +17,48 @@
                BlueprintIdentifier = "3FC0FEC2284E8AF6007AC590"
                BuildableName = "pdfwriter"
                BlueprintName = "pdfwriter"
+               ReferencedContainer = "container:pdfwriter.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3FC0FED6284E8C78007AC590"
+               BuildableName = "pdfwriter.bundle"
+               BlueprintName = "Build dmg"
+               ReferencedContainer = "container:pdfwriter.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3FA3247C285002AD00BDF5A2"
+               BuildableName = "Notarize dmg"
+               BlueprintName = "Notarize dmg"
+               ReferencedContainer = "container:pdfwriter.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3FA32472284FF9CB00BDF5A2"
+               BuildableName = "Staple dmg"
+               BlueprintName = "Staple dmg"
                ReferencedContainer = "container:pdfwriter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

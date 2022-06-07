@@ -6,6 +6,31 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3FA32472284FF9CB00BDF5A2 /* Staple dmg */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3FA32475284FF9CB00BDF5A2 /* Build configuration list for PBXAggregateTarget "Staple dmg" */;
+			buildPhases = (
+			);
+			dependencies = (
+				3FA32483285003A400BDF5A2 /* PBXTargetDependency */,
+			);
+			name = "Staple dmg";
+			productName = Notarize;
+		};
+		3FA3247C285002AD00BDF5A2 /* Notarize dmg */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3FA3247D285002AD00BDF5A2 /* Build configuration list for PBXAggregateTarget "Notarize dmg" */;
+			buildPhases = (
+			);
+			dependencies = (
+				3FA324812850039C00BDF5A2 /* PBXTargetDependency */,
+			);
+			name = "Notarize dmg";
+			productName = blah;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		3FC0FECA284E8B78007AC590 /* pdfwriter.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0519E512219BAF00DCCB1B /* pdfwriter.c */; };
 		3FC0FEDB284E8CA3007AC590 /* PDFwriter.ppd in Resources */ = {isa = PBXBuildFile; fileRef = FC0519E912219C1100DCCB1B /* PDFwriter.ppd */; };
@@ -14,6 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3FA324802850039C00BDF5A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FC0FED6284E8C78007AC590;
+			remoteInfo = "Build dmg";
+		};
+		3FA32482285003A400BDF5A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FA3247C285002AD00BDF5A2;
+			remoteInfo = "Notarize dmg";
+		};
 		3FC0FEDF284E8CC1007AC590 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -131,9 +170,9 @@
 			productReference = 3FC0FEC3284E8AF6007AC590 /* pdfwriter */;
 			productType = "com.apple.product-type.tool";
 		};
-		3FC0FED6284E8C78007AC590 /* PDFwriter */ = {
+		3FC0FED6284E8C78007AC590 /* Build dmg */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3FC0FED8284E8C78007AC590 /* Build configuration list for PBXNativeTarget "PDFwriter" */;
+			buildConfigurationList = 3FC0FED8284E8C78007AC590 /* Build configuration list for PBXNativeTarget "Build dmg" */;
 			buildPhases = (
 				3FC0FED3284E8C78007AC590 /* Sources */,
 				3FC0FED4284E8C78007AC590 /* Frameworks */,
@@ -146,7 +185,7 @@
 			dependencies = (
 				3FC0FEE0284E8CC1007AC590 /* PBXTargetDependency */,
 			);
-			name = PDFwriter;
+			name = "Build dmg";
 			productName = PDFwriter;
 			productReference = 3FC0FED7284E8C78007AC590 /* pdfwriter.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -160,6 +199,12 @@
 				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Simone Karin Lehmann";
 				TargetAttributes = {
+					3FA32472284FF9CB00BDF5A2 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					3FA3247C285002AD00BDF5A2 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					3FC0FEC2284E8AF6007AC590 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -183,7 +228,9 @@
 			projectRoot = "";
 			targets = (
 				3FC0FEC2284E8AF6007AC590 /* pdfwriter */,
-				3FC0FED6284E8C78007AC590 /* PDFwriter */,
+				3FC0FED6284E8C78007AC590 /* Build dmg */,
+				3FA3247C285002AD00BDF5A2 /* Notarize dmg */,
+				3FA32472284FF9CB00BDF5A2 /* Staple dmg */,
 			);
 		};
 /* End PBXProject section */
@@ -203,7 +250,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		3FF31560284FD97D00E2F07E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -214,7 +261,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nif [ -z \"$TARGET_BUILD_DIR\" -o ! -d \"$TARGET_BUILD_DIR\" ] ; then\n    echo \"The TARGET_BUILD_DIR environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1\nfi\n\nif [ -z \"$EXECUTABLE_PATH\" -o ! -f \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\" ] ; then\n    echo \"The EXECUTABLE_PATH environment variable is not set or is set to a non-existant file\" >&2\n    exit 1\nfi\n\nif [ -z \"$UNLOCALIZED_RESOURCES_FOLDER_PATH\" -o ! -d \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\" ] ; then\n    echo \"The UNLOCALIZED_RESOURCES_FOLDER_PATH environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\nif [ -z \"$CODESIGNING_FOLDER_PATH\" -o ! -d \"$CODESIGNING_FOLDER_PATH\" ] ; then\n    echo \"The CODESIGNING_FOLDER_PATH environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\nif [ -z \"$SOURCE_ROOT\" -o ! -d \"$SOURCE_ROOT\" ] ; then\n    echo \"The SOURCE_ROOT environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\n# Check if we are running as root\nuserid=`id -u`\nif [ $userid -ne 0 ] ; then\n    echo \"This target needs root privileges to chown the bundle to root. Build this target by executing the following commands in the Terminal application:\" >&2\n    echo \"cd '$SOURCE_ROOT' && sudo xcodebuild -scheme pdfwriter clean archive\" >&2\n    exit 1\nfi\n\n\n# Set permissions required by cups. Owner and group will be set by the Deployment build settings after this script runs in an archive build\nfind \"$CODESIGNING_FOLDER_PATH\" -type d -exec chmod 755 {} \\;\nchmod 700 \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\"\nchmod 750 \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/uninstall.sh\"\nchmod 644 \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/PDFwriter.ppd\"\n\nexit 0\n";
 		};
@@ -239,6 +286,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3FA324812850039C00BDF5A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FC0FED6284E8C78007AC590 /* Build dmg */;
+			targetProxy = 3FA324802850039C00BDF5A2 /* PBXContainerItemProxy */;
+		};
+		3FA32483285003A400BDF5A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FA3247C285002AD00BDF5A2 /* Notarize dmg */;
+			targetProxy = 3FA32482285003A400BDF5A2 /* PBXContainerItemProxy */;
+		};
 		3FC0FEE0284E8CC1007AC590 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3FC0FEC2284E8AF6007AC590 /* pdfwriter */;
@@ -330,6 +387,66 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "x86_64 arm64";
+			};
+			name = Release;
+		};
+		3FA32473284FF9CB00BDF5A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Installer: Planamesa Inc (8V953UDD5Q)";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8V953UDD5Q;
+				INSTALL_GROUP = "$(GROUP)";
+				INSTALL_OWNER = "$(USER)";
+				INSTALL_PATH = /;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_SWIFT_SYMBOLS = YES;
+			};
+			name = Debug;
+		};
+		3FA32474284FF9CB00BDF5A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Installer: Planamesa Inc (8V953UDD5Q)";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8V953UDD5Q;
+				INSTALL_GROUP = "$(GROUP)";
+				INSTALL_OWNER = "$(USER)";
+				INSTALL_PATH = /;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_SWIFT_SYMBOLS = YES;
+			};
+			name = Release;
+		};
+		3FA3247E285002AD00BDF5A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8V953UDD5Q;
+				INSTALL_GROUP = "$(GROUP)";
+				INSTALL_OWNER = "$(USER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		3FA3247F285002AD00BDF5A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8V953UDD5Q;
+				INSTALL_GROUP = "$(GROUP)";
+				INSTALL_OWNER = "$(USER)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -511,6 +628,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3FA32475284FF9CB00BDF5A2 /* Build configuration list for PBXAggregateTarget "Staple dmg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA32473284FF9CB00BDF5A2 /* Debug */,
+				3FA32474284FF9CB00BDF5A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FA3247D285002AD00BDF5A2 /* Build configuration list for PBXAggregateTarget "Notarize dmg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA3247E285002AD00BDF5A2 /* Debug */,
+				3FA3247F285002AD00BDF5A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3FC0FEC7284E8AF6007AC590 /* Build configuration list for PBXNativeTarget "pdfwriter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -520,7 +655,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3FC0FED8284E8C78007AC590 /* Build configuration list for PBXNativeTarget "PDFwriter" */ = {
+		3FC0FED8284E8C78007AC590 /* Build configuration list for PBXNativeTarget "Build dmg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3FC0FED9284E8C78007AC590 /* Debug */,
