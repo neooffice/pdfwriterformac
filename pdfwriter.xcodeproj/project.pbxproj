@@ -139,7 +139,6 @@
 				3FC0FED4284E8C78007AC590 /* Frameworks */,
 				3FC0FED5284E8C78007AC590 /* Resources */,
 				3FC0FEDD284E8CAF007AC590 /* CopyFiles */,
-				3FC0FEE1284E8D12007AC590 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -199,26 +198,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3FC0FEE1284E8D12007AC590 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/bin/sh -e";
-			shellScript = "# Restrict executable permissions otherwise cups won't load our driver\nif [ -z \"$BUILT_PRODUCTS_DIR\" -o -z \"$EXECUTABLE_PATH\" -o ! -d \"$BUILT_PRODUCTS_DIR\" -o ! -f \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\" ] ; then\n    exit 1\nfi\nchmod 700 \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"\nchmod 700 `dirname \"$BUILT_PRODUCTS_DIR/$EXECUTABLE_PATH\"`\"/../Resources/uninstall.sh\"\n\nexit 0\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3FC0FEBF284E8AF6007AC590 /* Sources */ = {
@@ -405,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALTERNATE_GROUP = wheel;
+				ALTERNATE_MODE = "u+rwX,g+rX,o-rwx";
 				ALTERNATE_OWNER = root;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -435,6 +415,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Simone Karin Lehmann. All rights reserved.";
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_GROUP = wheel;
+				INSTALL_MODE_FLAG = "u+rwX,g+rX,o-rwx";
 				INSTALL_OWNER = root;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Printers/Lisanet";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -454,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALTERNATE_GROUP = wheel;
+				ALTERNATE_MODE = "u+rwX,g+rX,o-rwx";
 				ALTERNATE_OWNER = root;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -480,6 +462,7 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Simone Karin Lehmann. All rights reserved.";
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_GROUP = wheel;
+				INSTALL_MODE_FLAG = "u+rwX,g+rX,o-rwx";
 				INSTALL_OWNER = root;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Printers/Lisanet";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
