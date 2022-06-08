@@ -16,7 +16,7 @@ function printhelpandexit {
 }
 
 # Parse arguments
-if [ $# -lt 6 ] ; then
+if [ $# -lt 8 ] ; then
 	printhelpandexit
 fi
 
@@ -54,6 +54,18 @@ if [ -z "$1" ] ; then
 	printhelpandexit "The EXPANDED_CODE_SIGN_IDENTITY_NAME argument '$1' is not set"
 fi
 export EXPANDED_CODE_SIGN_IDENTITY_NAME="$1"
+shift
+
+if [ -z "$1" ] ; then
+	printhelpandexit "The USER argument '$1' is not set"
+fi
+export USER="$1"
+shift
+
+if [ -z "$1" ] ; then
+	printhelpandexit "The GROUP argument '$1' is not set"
+fi
+export GROUP="$1"
 shift
 
 # This script must be run as root as we need all of the files and directories
