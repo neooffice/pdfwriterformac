@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+    <title>$(PACKAGE_FULL_NAME_AND_VERSION)</title>
+    <options customize="never" require-scripts="false" hostArchitectures="$(PACKAGE_ARCHS)"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="$(PRODUCT_BUNDLE_IDENTIFIER)"/>
+        </line>
+    </choices-outline>
+    <choice id="default" title="$(PACKAGE_FULL_NAME_AND_VERSION)"/>
+    <choice id="$(PRODUCT_BUNDLE_IDENTIFIER)" title="$(PACKAGE_FULL_NAME_AND_VERSION)" visible="false" customLocation="/">
+        <pkg-ref id="$(PRODUCT_BUNDLE_IDENTIFIER)"/>
+    </choice>
+    <pkg-ref id="$(PRODUCT_BUNDLE_IDENTIFIER)" version="$(MARKETING_VERSION)" onConclusion="none">#contents.pkg</pkg-ref>
+    <product id="$(PRODUCT_BUNDLE_IDENTIFIER)" version="$(MARKETING_VERSION)"/>
+    <volume-check>
+        <allowed-os-versions>
+            <os-version min="$(MACOSX_DEPLOYMENT_TARGET)"/>
+        </allowed-os-versions>
+    </volume-check>
+    <domains enable_localSystem="true"/>
+</installer-gui-script>

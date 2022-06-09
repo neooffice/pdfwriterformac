@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pkg-info format-version="2" overwrite-permissions="true" relocatable="true" identifier="$(PRODUCT_BUNDLE_IDENTIFIER)" version="$(MARKETING_VERSION)" install-location="/" auth="root" preserve-xattr="true">
+    <scripts>
+        <postinstall file="./postflight"/>
+    </scripts>
+    <payload installKBytes="$(PACKAGE_PAYLOAD_INSTALL_KBYTES)" numberOfFiles="$(PACKAGE_BOM_NUMBER_OF_FILES)"/>
+</pkg-info>

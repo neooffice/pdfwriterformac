@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -x
 
 # uninstall.sh
 # unistall Lisanet PDFwriter
