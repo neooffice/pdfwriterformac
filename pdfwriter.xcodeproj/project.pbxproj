@@ -263,7 +263,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nif [ -z \"$SOURCE_ROOT\" -o ! -d \"$SOURCE_ROOT\" ] ; then\n    echo \"The SOURCE_ROOT environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\nif [ -z \"$TARGET_BUILD_DIR\" -o ! -d \"$TARGET_BUILD_DIR\" ] ; then\n    echo \"The TARGET_BUILD_DIR environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1\nfi\n\nif [ -z \"$EXECUTABLE_PATH\" -o ! -f \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\" ] ; then\n    echo \"The EXECUTABLE_PATH environment variable is not set or is set to a non-existant file\" >&2\n    exit 1\nfi\n\nif [ -z \"$UNLOCALIZED_RESOURCES_FOLDER_PATH\" -o ! -d \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\" ] ; then\n    echo \"The UNLOCALIZED_RESOURCES_FOLDER_PATH environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\nif [ -z \"$CODESIGNING_FOLDER_PATH\" -o ! -d \"$CODESIGNING_FOLDER_PATH\" ] ; then\n    echo \"The CODESIGNING_FOLDER_PATH environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\nif [ -z \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" ] ; then\n    echo \"The EXPANDED_CODE_SIGN_IDENTITY_NAME environment variable is not set\" >&2\n    exit 1;\nfi\n\nif [ -z \"$USER\" ] ; then\n    echo \"The USER environment variable is not set\" >&2\n    exit 1;\nfi\n\nif [ -z \"$GROUP\" ] ; then\n    echo \"The GROUP environment variable is not set\" >&2\n    exit 1;\nfi\n\n# Run the script that creates the installer's Bom and Payload files. This script must be run as root as we need all of the files and directories within the Bom and Payload files to be chown'd to root.\nosascript -e 'do shell script \"sudo bash \\\"$SOURCE_ROOT/createarchivefilesforinstaller.sh\\\" \\\"$SOURCE_ROOT\\\" \\\"$TARGET_BUILD_DIR\\\" \\\"$EXECUTABLE_PATH\\\" \\\"$UNLOCALIZED_RESOURCES_FOLDER_PATH\\\" \\\"$CODESIGNING_FOLDER_PATH\\\" \\\"$EXPANDED_CODE_SIGN_IDENTITY_NAME\\\" \\\"$USER\\\" \\\"$GROUP\\\"\" with administrator privileges'\n\nexit 0\n";
+			shellScript = "set -e\n\nif [ -z \"$SOURCE_ROOT\" -o ! -d \"$SOURCE_ROOT\" ] ; then\n    echo \"The SOURCE_ROOT environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\nif [ -z \"$TARGET_BUILD_DIR\" -o ! -d \"$TARGET_BUILD_DIR\" ] ; then\n    echo \"The TARGET_BUILD_DIR environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1\nfi\n\nif [ -z \"$EXECUTABLE_PATH\" -o ! -f \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\" ] ; then\n    echo \"The EXECUTABLE_PATH environment variable is not set or is set to a non-existant file\" >&2\n    exit 1\nfi\n\nif [ -z \"$UNLOCALIZED_RESOURCES_FOLDER_PATH\" -o ! -d \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\" ] ; then\n    echo \"The UNLOCALIZED_RESOURCES_FOLDER_PATH environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\nif [ -z \"$CODESIGNING_FOLDER_PATH\" -o ! -d \"$CODESIGNING_FOLDER_PATH\" ] ; then\n    echo \"The CODESIGNING_FOLDER_PATH environment variable is not set or is set to a non-existant directory\" >&2\n    exit 1;\nfi\n\nif [ -z \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" ] ; then\n    echo \"The EXPANDED_CODE_SIGN_IDENTITY_NAME environment variable is not set\" >&2\n    exit 1;\nfi\n\nif [ -z \"$USER\" ] ; then\n    echo \"The USER environment variable is not set\" >&2\n    exit 1;\nfi\n\nif [ -z \"$GROUP\" ] ; then\n    echo \"The GROUP environment variable is not set\" >&2\n    exit 1;\nfi\n\n# Set a non-restrictive umask\numask 022\n\n# Create build directories\ncodesigning_bundle_dir=`dirname \"$CODESIGNING_FOLDER_PATH\"`\ncodesigning_bundle_name=`basename \"$CODESIGNING_FOLDER_PATH\"`\nrenamed_bundle_name=PDFwriter\narchive_build_dir=\"$TARGET_BUILD_DIR/$codesigning_bundle_name.archive\"\nlisanet_archive_build_dir=\"$archive_build_dir/Library/Printers/Lisanet\"\nppd_archive_build_dir=\"$archive_build_dir/Library/Printers/PPDs/Contents/Resources\"\nshared_user_archive_build_dir=\"$archive_build_dir/Users/Shared\"\ncups_backend_build_dir=\"$archive_build_dir/usr/libexec/cups/backend\"\nrm -Rf \"$archive_build_dir\"\nmkdir -p \"$lisanet_archive_build_dir\"\nmkdir -p \"$ppd_archive_build_dir\"\nmkdir -p \"$shared_user_archive_build_dir\"\nmkdir -p \"$cups_backend_build_dir\"\n\n# Copy and rename the bundle\nrenamed_bundle_name=\"PDFwriter\"\nrenamed_executable_path=`echo \"$EXECUTABLE_PATH\" | sed \"s#^$codesigning_bundle_name/#$renamed_bundle_name/#\"`\nrenamed_unlocalized_resources_folder_path=`echo \"$UNLOCALIZED_RESOURCES_FOLDER_PATH\" | sed \"s#^$codesigning_bundle_name/#$renamed_bundle_name/#\"`\n( cd \"$codesigning_bundle_dir\" && tar cf - \"$codesigning_bundle_name\" ) | ( cd \"$lisanet_archive_build_dir\" && tar xvf - )\nmv \"$lisanet_archive_build_dir/$codesigning_bundle_name\" \"$lisanet_archive_build_dir/$renamed_bundle_name\"\nxattr -rcs \"$lisanet_archive_build_dir\"\nln -s \"/Library/Printers/Lisanet/$renamed_unlocalized_resources_folder_path/PDFwriter.ppd\" \"$ppd_archive_build_dir/PDFwriter.ppd\"\nln -s \"/var/spool/pdfwriter\" \"$shared_user_archive_build_dir/PDFwriter\"\nln -s \"/Library/Printers/Lisanet/$renamed_executable_path\" \"$cups_backend_build_dir/pdfwriter\"\n\n# Set permissions required by cups\nfind \"$archive_build_dir\" -type d -exec chmod 755 {} \\;\nfind \"$archive_build_dir\" -type f -exec chmod 644 {} \\;\nfind \"$archive_build_dir\" -type l -exec chmod -h 644 {} \\;\nchmod 700 \"$lisanet_archive_build_dir/$renamed_executable_path\"\nchmod 750 \"$lisanet_archive_build_dir/$renamed_unlocalized_resources_folder_path/uninstall.sh\"\n\n# Codesign copied bundle\ncodesign --force --timestamp --options runtime -s \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" \"$lisanet_archive_build_dir/$renamed_bundle_name\"\ncodesign --verify --deep --strict \"$lisanet_archive_build_dir/$renamed_bundle_name\"\n\n# Run the script that creates the installer's Bom and Payload files. This script must be run as root as we need all of the files and directories within the Bom and Payload files to be chown'd to root.\nexport ARCHIVE_BUILD_DIR=\"$archive_build_dir\"\nosascript -e 'do shell script \"sudo bash \\\"$SOURCE_ROOT/createarchivefilesforinstaller.sh\\\" \\\"$TARGET_BUILD_DIR\\\" \\\"$ARCHIVE_BUILD_DIR\\\" \\\"$USER\\\" \\\"$GROUP\\\"\" with administrator privileges'\n\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -399,7 +399,7 @@
 				DEVELOPMENT_TEAM = 8V953UDD5Q;
 				INSTALL_GROUP = "$(GROUP)";
 				INSTALL_OWNER = "$(USER)";
-				INSTALL_PATH = /;
+				INSTALL_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -416,7 +416,7 @@
 				DEVELOPMENT_TEAM = 8V953UDD5Q;
 				INSTALL_GROUP = "$(GROUP)";
 				INSTALL_OWNER = "$(USER)";
-				INSTALL_PATH = /;
+				INSTALL_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -477,6 +477,7 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INSTALL_PATH = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -509,6 +510,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INSTALL_PATH = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
