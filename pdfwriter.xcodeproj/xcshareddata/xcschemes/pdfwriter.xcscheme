@@ -30,35 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3FC0FED6284E8C78007AC590"
                BuildableName = "pdfwriter.bundle"
-               BlueprintName = "Build dmg"
-               ReferencedContainer = "container:pdfwriter.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3FA3247C285002AD00BDF5A2"
-               BuildableName = "Notarize dmg"
-               BlueprintName = "Notarize dmg"
-               ReferencedContainer = "container:pdfwriter.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3FA32472284FF9CB00BDF5A2"
-               BuildableName = "Staple dmg"
-               BlueprintName = "Staple dmg"
+               BlueprintName = "create_pkg_in_dmg"
                ReferencedContainer = "container:pdfwriter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
