@@ -39,14 +39,14 @@
 /* Begin PBXFileReference section */
 		3EE9D0E9122C4A90007D056F /* postinstall.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = postinstall.sh; sourceTree = "<group>"; };
 		3EE9D0F3122C5BFA007D056F /* uninstall.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = uninstall.sh; sourceTree = "<group>"; };
-		3F4C58D52853E289005868F0 /* README.odt */ = {isa = PBXFileReference; lastKnownFileType = file; path = README.odt; sourceTree = SOURCE_ROOT; };
-		3F4C58D62853E289005868F0 /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = SOURCE_ROOT; };
-		3F4C58D72853E289005868F0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3F4C58D92853E303005868F0 /* create-dmg-1.1.0.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "create-dmg-1.1.0.tar.gz"; sourceTree = "<group>"; };
 		3F4C58DA2853E303005868F0 /* Distribution */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Distribution; sourceTree = "<group>"; };
 		3F4C58DB2853E304005868F0 /* PackageInfo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PackageInfo; sourceTree = "<group>"; };
 		3F4C58DC2853E304005868F0 /* createarchivefilesforinstaller.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createarchivefilesforinstaller.sh; sourceTree = "<group>"; };
 		3F4C58DD2853E30F005868F0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3F5896E12853ED780006FCD2 /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
+		3F5896E22853ED780006FCD2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3F5896E32853ED780006FCD2 /* README.odt */ = {isa = PBXFileReference; lastKnownFileType = file; path = README.odt; sourceTree = "<group>"; };
 		3FC0FEC3284E8AF6007AC590 /* pdfwriter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pdfwriter; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC0FED7284E8C78007AC590 /* pdfwriter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pdfwriter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC0519E512219BAF00DCCB1B /* pdfwriter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pdfwriter.c; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				08FB7795FE84155DC02AAC07 /* Source */,
 				FC0519E812219BF900DCCB1B /* Extra */,
 				3F4C58D82853E2BA005868F0 /* Package */,
-				3F4C58D42853E242005868F0 /* Documentation */,
+				3F5896E02853ED530006FCD2 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 			);
 			name = pdfwriter;
@@ -104,16 +104,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F4C58D42853E242005868F0 /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				3F4C58D72853E289005868F0 /* README.md */,
-				3F4C58D52853E289005868F0 /* README.odt */,
-				3F4C58D62853E289005868F0 /* README.pdf */,
-			);
-			path = Documentation;
-			sourceTree = "<group>";
-		};
 		3F4C58D82853E2BA005868F0 /* Package */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +113,16 @@
 				3F4C58DB2853E304005868F0 /* PackageInfo */,
 			);
 			name = Package;
+			sourceTree = "<group>";
+		};
+		3F5896E02853ED530006FCD2 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				3F5896E22853ED780006FCD2 /* README.md */,
+				3F5896E32853ED780006FCD2 /* README.odt */,
+				3F5896E12853ED780006FCD2 /* README.pdf */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 		FC0519E812219BF900DCCB1B /* Extra */ = {
