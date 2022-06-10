@@ -4,7 +4,7 @@ PDFwriter for Mac is heavily based on <a href="https://www.cups-pdf.de/">CUPS-PD
 
 The current version of PDFwriter for Mac works on macOS 10.12 Sierra and higher. For older versions of Mac OS X or macOS, you can download older versions of PDFwriter for Mac from <a href="https://sourceforge.net/projects/pdfwriterformac/">SourceForge</a>.
 
-Special thanks go to the developers of the original PDFwriter for Mac source. The original source code was copied from the GPL v2 source code in <a href="https://sourceforge.net/projects/pdfwriterformac/">SourceForge's PDFWriter for Mac project</a>. The current version contains only a few minor changes to the original source code. The main difference between the original source code and the current version is that the current version has been codesigned and notarized to comply with macOS Gatekeeper's security checks.
+Special thanks go to the developers of the original PDFwriter for Mac source code. The original source code was copied from the GPL v2 source code in <a href="https://sourceforge.net/projects/pdfwriterformac/">SourceForge's PDFWriter for Mac project</a>. The current version contains only a few minor changes to the original source code. The main difference between the original source code and the current version is that the current version has been codesigned and notarized to comply with macOS Gatekeeper's security checks.
 
 
 Building PDFwriter for Mac
