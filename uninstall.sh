@@ -6,6 +6,13 @@
 # Created by Simone Karin Lehmann on 30.08.10.
 # Copyright 2010 Simone Karin Lehmann. All rights reserved.
 
+# Restrict path and library loading to safe paths
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export PATH
+unset DYLD_LIBRARY_PATH
+
+umask 022
+
 # uninstall printer
 lpadmin -x PDFwriter
 
