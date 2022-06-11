@@ -8,6 +8,8 @@
  * This source is a heavily patched version of CUPS-PDF
  * For more details see the ChangeLog file.
  *
+ * Modified June 2022 by Patrick Luby.
+ *
  
  
  cups-pdf.h -- CUPS Backend Header File (version 2.5.0, 2009-01-26)

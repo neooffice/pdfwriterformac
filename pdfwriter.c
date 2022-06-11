@@ -9,6 +9,8 @@
  * This source is a heavily patched version of CUPS-PDF
  * For more details see the ChangeLog file.
  *
+ * Modified June 2022 by Patrick Luby.
+ *
 */ 
 /* cups-pdf.c -- CUPS Backend (version 2.5.0, 2009-01-26)
    08.02.2003, Volker C. Behr

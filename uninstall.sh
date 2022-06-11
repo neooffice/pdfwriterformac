@@ -5,6 +5,8 @@
 #
 # Created by Simone Karin Lehmann on 30.08.10.
 # Copyright 2010 Simone Karin Lehmann. All rights reserved.
+#
+# Modified June 2022 by Patrick Luby.
 
 # Restrict path and library loading to safe paths
 PATH=/bin:/sbin:/usr/bin:/usr/sbin

@@ -180,7 +180,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1340;
-				ORGANIZATIONNAME = "Simone Karin Lehmann";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					3FC0FEC2284E8AF6007AC590 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -457,7 +457,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Simone Karin Lehmann. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2010 Simone Karin Lehmann and 2022 NeoOffice contributors. All rights reserved.";
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_GROUP = "$(GROUP)";
 				INSTALL_MODE_FLAG = "u+w,go-w,a+rX";
@@ -503,7 +503,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Simone Karin Lehmann. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2010 Simone Karin Lehmann and 2022 NeoOffice contributors. All rights reserved.";
 				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_GROUP = "$(GROUP)";
 				INSTALL_MODE_FLAG = "u+w,go-w,a+rX";
