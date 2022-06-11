@@ -6,6 +6,8 @@ The current version of PDFwriter for Mac works on macOS 10.12 Sierra and higher.
 
 Special thanks go to the developers of the original PDFwriter for Mac source code. The original source code was copied from the GPL v2 source code in <a href="https://sourceforge.net/projects/pdfwriterformac/">SourceForge's PDFWriter for Mac project</a>. The current version contains only a few minor changes to the original source code. The main difference between the original source code and the current version is that the current version has been codesigned and notarized to comply with macOS Gatekeeper's security checks.
 
+Special thanks also go to the developers of <a href="https://github.com/rodyager/RWTS-PDFwriter">GitHub's RWTS-PDFwriter prject</a> for their code that automatically adds the printer in the Printers & Scanners panel in the System Preferences application.
+
 
 Building PDFwriter for Mac
 --------------------------
