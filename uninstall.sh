@@ -6,6 +6,9 @@
 # Created by Simone Karin Lehmann on 30.08.10.
 # Copyright 2010 Simone Karin Lehmann. All rights reserved.
 
+# uninstall printer
+lpadmin -x PDFwriter
+
 sudo rm -Rf /Library/Printers/Lisanet
 sudo rm -f /Library/Printers/PPDs/Contents/Resources/PDFwriter.ppd
 sudo rm -f /Users/Shared/PDFwriter

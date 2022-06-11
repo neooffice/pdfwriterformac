@@ -9,3 +9,6 @@
 # restart cupsd
 launchctl unload /System/Library/LaunchDaemons/org.cups.cupsd.plist
 launchctl load /System/Library/LaunchDaemons/org.cups.cupsd.plist
+
+# install printer
+lpadmin -p PDFwriter -E -v pdfwriter:/ -P /Library/Printers/PPDs/Contents/Resources/PDFwriter.ppd -o printer-is-shared=false
