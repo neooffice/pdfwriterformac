@@ -20,7 +20,7 @@ umask 022
 # these softlinks in the installer because these links will cause notarization
 # to fail.
 ln -sf Contents/MacOS/pdfwriter /Library/Printers/Lisanet/PDFwriter/pdfwriter
-ln -sf Contents/Resources/PPDwriter.ppd /Library/Printers/Lisanet/PDFwriter/PPDwriter.ppd
+ln -sf Contents/Resources/PDFwriter.ppd /Library/Printers/Lisanet/PDFwriter/PDFwriter.ppd
 ln -sf Contents/Resources/uninstall.sh /Library/Printers/Lisanet/PDFwriter/uninstall.sh
 
 # restart cupsd
