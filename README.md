@@ -1,4 +1,4 @@
-PDFwriter for Mac is a native printer driver for macOS, which will let you generate PDF files by simply printing. When a macOS application prints to the PDFwriter printer, a PDF file will be saved in the /Users/Shared/PDFwriter/<macOS_username> folder.
+PDFwriter for Mac is a native printer driver for macOS which will let you generate PDF files by simply printing. PDFwriter for Mac is useful for applications such as Adobe Acrobat Reader that do not provide a way to save PDF files that can be opened in the macOS Preview application because they do not use the native macOS print dialog. When a macOS application prints to the PDFwriter printer, a PDF file will be saved in the /Users/Shared/PDFwriter/<macOS_username> folder.
 
 PDFwriter for Mac is heavily based on <a href="https://www.cups-pdf.de/">CUPS-PDF</a> but does not use Ghostscript to generate PDF files. Instead, it uses native macOS internal PDF processing.
 
