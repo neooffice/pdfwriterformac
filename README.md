@@ -25,4 +25,4 @@ To build an installer, select the Product > Archive menu item in Xcode. This wil
 
 Important: if the installer build fails with a "notarytool store-credentials" error, you will need to execute the following command once in a Terminal to cache your Apple developer ID's password in the macOS Keychain Access application so that Xcode's notarytool can fetch it and use it to upload the installer to Apple's notarization servers:
 
-xcrun notarytool store-credentials AC_PASSWORD --apple-id <e-mail> --team-id <team-id>
+    xcrun notarytool store-credentials AC_PASSWORD --apple-id <e-mail> --team-id <team-id>
