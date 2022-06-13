@@ -23,6 +23,6 @@ If you build by selecting one of the Product > Build, Run, Profile, or Analyze m
 
 To build an installer, select the Product > Archive menu item in Xcode. This will create an archive that contains a .dmg file that is codesigned and notarized. If the build succeeds, you can find the archive by selecting the Window > Organizer menu item and then clicking on Archives in the Organizer dialog that appears.
 
-Important: if the installer build fails with an "notarytool store-credentials" error, you will need to execute the following command once in a Terminal to cache your Apple developer ID's password in the macOS Keychain Access application so that Xcode's notarytool can fetch it and use it to upload the installer to Apple's notarization servers:
+Important: if the installer build fails with a "notarytool store-credentials" error, you will need to execute the following command once in a Terminal to cache your Apple developer ID's password in the macOS Keychain Access application so that Xcode's notarytool can fetch it and use it to upload the installer to Apple's notarization servers:
 
 xcrun notarytool store-credentials AC_PASSWORD --apple-id <e-mail> --team-id <team-id>
